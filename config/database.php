@@ -13,8 +13,9 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
-
+//    'default' => env('DB_CONNECTION', 'mysql'),
+//    'default' => 'mongodb',
+    'default' => env('DB_CONNECTION', 'mongodb'),
     /*
     |--------------------------------------------------------------------------
     | Database Connections
@@ -33,13 +34,35 @@ return [
 
     'connections' => [
 
+//        'mongodb' => [
+//            'driver'   => 'mongodb',
+//            'host'     => 'localhost',
+//            'port'     => 27017,
+//            'username' => '',
+//            'password' => '',
+//            'database' => 'laravel-may'
+//        ],
+//        'mongodb' => [
+//            'driver'   => 'mongodb',
+//            'host'     => env('DB_HOST', 'localhost'),
+//            'port'     => env('DB_PORT', 27017),
+//            'database' => env('DB_DATABASE'),
+//            'username' => env('DB_USERNAME'),
+//            'password' => env('DB_PASSWORD'),
+//            'options'  => [
+//                'database' => 'admin' // sets the authentication database required by mongo 3
+//            ]
+//        ],
         'mongodb' => [
             'driver'   => 'mongodb',
-            'host'     => 'localhost',
-            'port'     => 27017,
-            'username' => '',
-            'password' => '',
-            'database' => 'mongodb'
+            'host'     => env('DB_HOST', 'localhost'),
+            'port'     => env('DB_PORT', 27017),
+            'database' => env('DB_DATABASE', 'laravel-may'),
+            'username' => env('DB_USERNAME', ''),
+            'password' => env('DB_PASSWORD', ''),
+            'options' => [
+                'database' => 'admin' // set the authentication database
+            ]
         ],
 
         'sqlite' => [
