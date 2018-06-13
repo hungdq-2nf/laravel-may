@@ -16,3 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get("all-users","UserController@all");
+
+Route::get("api1","UserController@getApi1");
+
+Route::get('send-message', 'RedisController@index');
+
+Route::post('send-message', 'RedisController@postSendMessage');
